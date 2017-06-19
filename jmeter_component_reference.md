@@ -33,6 +33,24 @@ requests:
       - url: 'http://www.yahoo.com'
 ```
 
+## Pre Processors
+
+Preprocessors are used to modify the samplers in their scope.
+
+### BeanShell PreProcessor
+
+#### Parameters
+
+#### bzt
+
+### JSR223 PreProcessor
+
+The JSR223 PreProcessor allows JSR223 script code to be applied before taking a sample.
+
+#### Parameters
+
+#### bzt
+
 ## Post Processors
 
 As the name suggests, Post Processors are applied after samplers.
