@@ -2,7 +2,7 @@ include:
   - devtools.build
   - devtools.git
   - devtools.java
-  - python.virtualenv
+  - python
   - jenkins.repo
 
 jenkins:
