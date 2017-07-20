@@ -1,1 +1,19 @@
 file_client: local
+
+file_roots:
+  REW:
+    - /srv/salt/REW/states
+    - /srv/salt/REW/formulas
+    - /srv/salt/base/states
+    - /srv/salt/base/formulas
+  base:
+    - /srv/salt/base/states
+    - /srv/salt/base/formulas
+
+pillar_roots:
+  REW:
+    - /srv/salt/REW/pillar
+    - /srv/salt/base/pillar
+
+pillarenv: REW
+
