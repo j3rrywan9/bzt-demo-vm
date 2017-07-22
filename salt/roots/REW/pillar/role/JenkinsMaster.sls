@@ -1,5 +1,8 @@
 sudoers:
   jenkins:
+    defaults:
+      generic:
+        - 'env_keep += "DEBIAN_FRONTEND"'
     groups:
       qe:
         - '(jenkins) ALL'
