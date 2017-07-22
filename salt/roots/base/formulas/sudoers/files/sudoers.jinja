@@ -1,3 +1,10 @@
+{%- set defaults = sudoers.get('defaults', {}) %}
+{%- set generic_defaults = defaults.get('generic', []) %}
+{%- for default in generic_defaults -%}
+Defaults {{ default }}
+
+{% endfor %}
+
 {%- for alias in sudoers.user_alias|default({}) -%}
 User_Alias{{ "\t" ~ alias }} = {{ sudoers.user_alias[alias]|join(', ') }}
 
