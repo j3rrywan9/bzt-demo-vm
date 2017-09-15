@@ -1,0 +1,3 @@
+ipython:
+  pkg.installed
+
