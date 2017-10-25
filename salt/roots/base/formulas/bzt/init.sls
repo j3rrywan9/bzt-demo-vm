@@ -1,3 +1,0 @@
-bzt:
-  pip.installed
-

@@ -6,5 +6,4 @@ REW:
   'role:JenkinsMaster':
     - match: grain
     - jenkins.master
-    - bzt
 
