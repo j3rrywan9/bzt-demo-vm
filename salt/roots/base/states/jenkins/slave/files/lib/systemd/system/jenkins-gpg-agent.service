@@ -1,0 +1,12 @@
+[Unit]
+Description=GnuPG Agent service
+IgnoreOnIsolate=true
+
+[Service]
+User=jenkins
+Type=forking
+ExecStart=/usr/bin/gpg-agent --daemon --allow-preset-passphrase --write-env-file /var/lib/jenkins/.gnupg/.gpg-agent-info --log-file /var/lib/jenkins/.gnupg/.gpg-agent.log
+ExecStop=/usr/bin/pkill gpg-agent
+
+[Install]
+WantedBy=multi-user.target

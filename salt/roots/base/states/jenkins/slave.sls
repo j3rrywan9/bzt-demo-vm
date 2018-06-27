@@ -5,3 +5,4 @@ include:
   - python
   - jenkins.repo
   - jenkins.test_support
+  - jenkins.deb_signing_support
