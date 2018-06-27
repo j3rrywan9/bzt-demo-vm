@@ -7,3 +7,7 @@ REW:
     - match: grain
     - jenkins.master
 
+  'role:JenkinsSlave':
+    - match: grain
+    - jenkins.slave
+

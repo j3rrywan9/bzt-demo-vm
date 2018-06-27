@@ -4,7 +4,6 @@ include:
   - devtools.java
   - python
   - jenkins.repo
-  - jenkins.test_support
 
 jenkins:
   pkg.installed:
