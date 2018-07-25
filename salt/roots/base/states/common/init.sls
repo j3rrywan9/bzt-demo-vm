@@ -4,3 +4,5 @@ binutils:
 curl:
   pkg.installed
 
+openssl:
+  pkg.installed

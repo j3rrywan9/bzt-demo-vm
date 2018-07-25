@@ -10,9 +10,6 @@ libreadline-dev:
 libssl-dev:
   pkg.installed
 
-openssl:
-  pkg.installed
-
 download_ruby_2.5.1_source:
   cmd.run:
     - name: curl -s -S --retry 5 https://cache.ruby-lang.org/pub/ruby/2.5/ruby-2.5.1.tar.gz | tar xz
@@ -23,6 +20,18 @@ download_ruby_2.5.1_source:
 install_ruby_2.5.1_from_source:
   cmd.run:
     - name: cd /var/lib/jenkins/ruby-2.5.1 && ./configure && make && make install
+
+remove_ruby_2.5.1_source:
+  file.absent:
+    - name: /var/lib/jenkins/ruby-2.5.1
+    - require:
+      - install_ruby_2.5.1_from_source
+
+bundler:
+  gem.installed:
+    - version: 1.16.2
+    - require:
+      - install_ruby_2.5.1_from_source
 
 fpm-cookery:
   gem.installed:
