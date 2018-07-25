@@ -1,8 +1,8 @@
 include:
   - debian.jessie_backports_repo
+  - devtools.build
   - devtools.git
   - devtools.java
-  - devtools.ruby
   - python
   - jenkins.repo
   - jenkins.test_support
