@@ -1,3 +1,5 @@
+{%- set desired_ruby_version = '2.5.1p57' %}
+
 bison:
   pkg.installed
 
@@ -15,17 +17,19 @@ download_ruby_2.5.1_source:
     - name: curl -s -S --retry 5 https://cache.ruby-lang.org/pub/ruby/2.5/ruby-2.5.1.tar.gz | tar xz
     - runas: jenkins
     - cwd: /var/lib/jenkins
-    - creates: /var/lib/jenkins/ruby-2.5.1
+    - unless: command -v ruby && test {{ desired_ruby_version|yaml_encode }} = $(ruby -v|awk '{print $2}')
 
 install_ruby_2.5.1_from_source:
   cmd.run:
     - name: cd /var/lib/jenkins/ruby-2.5.1 && ./configure && make && make install
+    - onchanges:
+      - download_ruby_2.5.1_source
 
 remove_ruby_2.5.1_source:
   file.absent:
     - name: /var/lib/jenkins/ruby-2.5.1
-    - require:
-      - install_ruby_2.5.1_from_source
+    - onchanges:
+      - download_ruby_2.5.1_source
 
 bundler:
   gem.installed:
