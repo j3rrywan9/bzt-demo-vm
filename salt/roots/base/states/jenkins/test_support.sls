@@ -63,3 +63,9 @@ kitchen-vagrant:
     - version: 1.3.2
     - require:
       - sls: devtools.ruby
+
+kitchen-inspec:
+  gem.installed:
+    - version: 0.23.1
+    - require:
+      - sls: devtools.ruby
