@@ -33,3 +33,49 @@ requests:
       - url: 'http://www.yahoo.com'
 ```
 
+## Configuration Elements
+
+### CSV Data Set Config
+
+CSV Data Set Config is used to read lines from a file, and split them into variables.
+It is well suited to handling large numbers of variables, and is also useful for testing with "random" and unique values.
+
+#### Parameters
+
+| Attribute | Description | Required |
+| --- | --- | --- |
+| Name | Descriptive name for this element that is shown in the tree. | |
+| Filename | Name of the file to be read. | Yes |
+
+### HTTP Cookie Manager
+
+### HTTP Header Manager
+
+## Assertions
+
+### Duration Assertion
+
+The Duration Assertion tests that each response was received within a given amount of time.
+Any response that takes longer than the given number of milliseconds (specified by the user) is marked as a failed response.
+
+## Timers
+
+### Uniform Random Timer
+
+This timer pauses each thread request for a random amount of time, with each time interval having the same probability of occurring.
+The total delay is the sum of the random value and the offset value.
+
+## Pre Processors
+
+### BeanShell PreProcessor
+
+## Post-Processors
+
+### JSON Extractor
+
+## Miscellaneous Features
+
+### Thread Group
+
+A Thread Group defines a pool of users that will execute a particular test case against your server.
+In the Thread Group GUI, you can control the number of users simulated (number of threads), the ramp up time (how long it takes to start all the threads), the number of times to perform the test, and optionally, a start and stop time for the test.
