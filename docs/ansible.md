@@ -71,3 +71,30 @@ Ansible expects these variable files to be in YAML format.
 Ansible looks for host variable files in a directory called *host_vars* and group variable files in a directory called *group_vars*.
 
 ## Variables and Facts
+
+### Defining Variables in Playbooks
+
+The simplest way to define variables is to put a `vars` section in your playbook with the names and values of variables.
+
+Ansible also allows you to put variables into one or more files, using a section called `vars_files`.
+
+### Viewing the Values of Variables
+
+### Registering Variables
+
+Often, you'll find that you need to set the value of a variable based on the result of a task.
+To do so, we create a *registered variable* using the `register` clause when invoking a module.
+
+In order to use the registered variable later, we need to know the type of value to expect.
+The value of a variable set using the `register` clause is always a dictionary, but the specific keys of the dictionary are different, depending on the module that was invoked.
+
+I've found the simplest way to find out what a module returns is to register a variable and then output that variable with the `debug` module.
+
+Sometimes it's useful to do something with the output of a failed task.
+However, if the task fails, Ansible will stop executing tasks for the failed host.
+We can use the `ignore_errors` clause, so Ansible does not stop on the error.
+
+### Facts
+
+When Ansible gathers facts, it connects to the host and queries it for all kinds of details about the host: CPU architecture, operating system, IP addresses, memory info, disk info, and more.
+This information is stored invariables that are called *facts*, and they behave just like any other variable.
