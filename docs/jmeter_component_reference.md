@@ -49,6 +49,14 @@ It is well suited to handling large numbers of variables, and is also useful for
 
 ### HTTP Cookie Manager
 
+The Cookie Manager element has two functions:
+
+First, it stores and sends cookies just like a web browser.
+If you have an HTTP Request and the response contains a cookie, the Cookie Manager automatically stores that cookie and will use it for all future requests to that particular web site.
+Each JMeter thread has its own "cookie storage area".
+So, if you are testing a web site that uses a cookie for storing session information, each JMeter thread will have its own session.
+Note that such cookies do not appear on the Cookie Manager display, but they can be seen using the View Results Tree Listener.
+
 ### HTTP Header Manager
 
 ## Assertions
