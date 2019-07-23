@@ -6,8 +6,14 @@
 
 #### Vagrant
 
-[Vagrant 2.1.2 for macOS](https://releases.hashicorp.com/vagrant/2.1.2/vagrant_2.1.2_x86_64.dmg)
+[Vagrant 2.2.5 for macOS](https://releases.hashicorp.com/vagrant/2.2.5/vagrant_2.2.5_x86_64.dmg)
 
 #### VirtualBox
 
-[VirtualBox 5.2.16 for OS X](https://download.virtualbox.org/virtualbox/5.2.16/VirtualBox-5.2.16-123759-OSX.dmg)
+[VirtualBox 6.0.10 for OS X](https://download.virtualbox.org/virtualbox/6.0.10/VirtualBox-6.0.10-132072-OSX.dmg)
+
+#### VirtualBox Guest Additions
+
+```bash
+vagrant plugin install vagrant-vbguest
+```
