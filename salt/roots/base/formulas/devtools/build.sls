@@ -1,6 +1,3 @@
-include:
-  - debian.jessie_backports_repo
-
 build-essential:
   pkg.installed
 
@@ -15,4 +12,3 @@ libxslt-dev:
 
 zlib1g-dev:
   pkg.installed
-
