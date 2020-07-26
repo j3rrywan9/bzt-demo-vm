@@ -4,6 +4,9 @@ apache2-utils:
 dstat:
   pkg.installed
 
+hping3:
+  pkg.installed
+
 htop:
   pkg.installed
 
@@ -17,4 +20,7 @@ stress:
   pkg.installed
 
 sysstat:
+  pkg.installed
+
+tcpdump:
   pkg.installed
